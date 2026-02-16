@@ -1,0 +1,121 @@
+{
+  "header": {
+    "company": "会社案内",
+    "products": "製品情報",
+    "news": "ニュース",
+    "contact": "お問い合わせ",
+    "mega_menu_desc": "世界レベルの半導体ソリューションと革新的な技術を提供します。",
+    "view_overview": "詳細を見る",
+    "inquiry": "お問い合わせ",
+    "search": "検索"
+  },
+  "menu": {
+    "company": {
+      "title": "会社案内",
+      "about": "会社紹介",
+      "vision": "ビジョン・ミッション",
+      "history": "沿革",
+      "certifications": "認証・受賞",
+      "global": "グローバルネットワーク"
+    },
+    "products": {
+      "title": "製品情報",
+      "category": "製品カテゴリー",
+      "search": "製品検索",
+      "featured": "主要製品群"
+    },
+    "technology": {
+      "title": "技術情報",
+      "core": "コア技術",
+      "rnd": "研究開発",
+      "applications": "適用産業"
+    },
+    "investors": {
+      "title": "投資情報",
+      "info": "投資情報",
+      "disclosure": "公示資料",
+      "financial": "財務情報",
+      "ir_materials": "IR資料"
+    },
+    "news": {
+      "title": "ニュース",
+      "press": "プレスリリース",
+      "notice": "お知らせ",
+      "achievements": "主要実績"
+    },
+    "contact": {
+      "title": "お問い合わせ",
+      "inquiry": "お問い合わせ",
+      "location": "アクセス",
+      "global": "グローバルお問い合わせ"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "半導体革新で\n未来を拓く",
+      "subtitle": "済州半導体は、自動車、IoT、モバイル機器向けの世界最高水準のメモリソリューションを提供します。",
+      "cta_products": "製品を見る",
+      "cta_contact": "営業へのお問い合わせ"
+    },
+    "features": {
+      "title": "済州半導体が選ばれる理由",
+      "desc": "性能、効率、信頼性に最適化された最先端の半導体ソリューションを提供します。",
+      "high_performance": {
+        "title": "高性能",
+        "desc": "高度なアーキテクチャによる優れた速度と処理能力を提供。"
+      },
+      "energy_efficient": {
+        "title": "エネルギー効率",
+        "desc": "モバイルおよびIoTデバイスのバッテリー寿命を延ばす最適化された低電力設計。"
+      },
+      "reliability": {
+        "title": "信頼性",
+        "desc": "過酷な環境でも安定した動作を保証する車載グレード（AEC-Q100）の品質。"
+      }
+    },
+    "products": {
+      "title": "主要ソリューション",
+      "subtitle": "様々な産業分野に合わせた包括的なメモリポートフォリオ",
+      "view_all": "全製品を見る",
+      "memory": {
+        "category": "メモリ",
+        "desc": "モバイルデバイス向けの高速・低消費電力LPDDRメモリソリューション"
+      },
+      "automotive": {
+        "category": "車載用",
+        "desc": "インフォテインメントおよびADASシステム向けのAEC-Q100認定メモリ"
+      },
+      "iot": {
+        "category": "IoT",
+        "desc": "限られたスペースのIoTデバイス向けのNAND FlashとDRAM複合パッケージ"
+      },
+      "learn_more": "詳細はこちら"
+    },
+    "stats": {
+      "years": "年の革新",
+      "partners": "グローバルパートナー",
+      "shipped": "総出荷数量",
+      "quality": "認定品質"
+    },
+    "cta_bottom": {
+      "title": "私たちと共に革新を",
+      "desc": "特定のアプリケーション要件に最適なメモリソリューションを見つけるために、エンジニアリングチームにお問い合わせください。",
+      "button": "お問い合わせ"
+    }
+  },
+  "footer": {
+    "about": "超低消費電力メモリソリューションの未来をリードします。最先端の半導体技術で世界をつなぎます。",
+    "contact": {
+      "jeju_hq": "済州本社",
+      "jeju_addr": "済州特別自治道 済州市 尖端路8キル 11-10",
+      "phone": "電話",
+      "email": "Eメール"
+    },
+    "legal": {
+      "privacy": "個人情報処理方針",
+      "terms": "利用規約",
+      "sitemap": "サイトマップ",
+      "rights": "Jeju Semiconductor Corp. All rights reserved."
+    }
+  }
+}

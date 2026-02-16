@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, ChevronRight, Search, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { MENU_STRUCTURE } from '../data/menu';
 import LanguageToggle from './LanguageToggle';
 
@@ -11,6 +12,7 @@ const Header = () => {
     const [hoveredMenu, setHoveredMenu] = useState<string | null>(null);
     const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
     const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
+    const { t } = useTranslation();
     
     // Scroll detection
     useEffect(() => {
@@ -126,7 +128,7 @@ const Header = () => {
                                     to={menu.path}
                                     className={`relative py-4 text-[15px] font-bold tracking-wide transition-colors flex items-center gap-1 group focus-ring ${textBase} ${hoverEffect}`}
                                 >
-                                    {menu.label}
+                                    {t(menu.label)}
                                     {/* Animated Underline */}
                                     <span className={`absolute bottom-2 left-0 h-0.5 bg-[#00AEEF] transition-all duration-300 ${hoveredMenu === menu.id ? 'w-full opacity-100' : 'w-0 opacity-0'}`}></span>
                                 </Link>
@@ -151,7 +153,7 @@ const Header = () => {
                         className={`px-6 py-2.5 text-xs font-bold uppercase tracking-wider border transition-all rounded-sm shadow-sm focus-ring ${buttonClass}`}
                         aria-label="Contact Inquiry"
                     >
-                        Inquiry
+                        {t('header.inquiry')}
                     </Link>
                 </div>
 
@@ -184,15 +186,15 @@ const Header = () => {
                                 <div className="col-span-1 border-r border-slate-100 pr-8 flex flex-col justify-between">
                                     <div>
                                         <h3 className="text-3xl font-bold text-[#003366] mb-4">
-                                            {MENU_STRUCTURE.find(m => m.id === hoveredMenu)?.label}
+                                            {t(MENU_STRUCTURE.find(m => m.id === hoveredMenu)?.label || '')}
                                         </h3>
                                         <p className="text-slate-500 text-sm leading-relaxed">
-                                            We deliver world-class semiconductor solutions with precision and innovation.
+                                            {t('header.mega_menu_desc')}
                                         </p>
                                     </div>
                                     <Link to={MENU_STRUCTURE.find(m => m.id === hoveredMenu)?.path || "#"} 
                                           className="mt-8 text-[#00AEEF] font-bold text-sm tracking-widest flex items-center gap-2 cursor-pointer group hover:text-[#008ec2] w-fit focus-ring">
-                                        VIEW OVERVIEW <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                                        {t('header.view_overview')} <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                                     </Link>
                                 </div>
                                 
@@ -206,7 +208,7 @@ const Header = () => {
                                                     className="group flex items-center justify-between p-4 rounded-xl hover:bg-slate-50 border border-transparent hover:border-slate-100 transition-all duration-200 focus-ring"
                                                     onClick={() => setHoveredMenu(null)}
                                                 >
-                                                    <span className="text-[#334155] font-semibold group-hover:text-[#00AEEF] transition-colors text-[15px]">{child.label}</span>
+                                                    <span className="text-[#334155] font-semibold group-hover:text-[#00AEEF] transition-colors text-[15px]">{t(child.label)}</span>
                                                     <ChevronRight size={18} className="text-slate-300 group-hover:text-[#00AEEF] opacity-0 group-hover:opacity-100 transition-all -translate-x-1 group-hover:translate-x-0" />
                                                 </Link>
                                             </li>
@@ -238,7 +240,7 @@ const Header = () => {
                                         aria-expanded={mobileExpanded === menu.id}
                                     >
                                         <span className={`text-lg font-bold transition-colors ${mobileExpanded === menu.id ? 'text-[#00AEEF]' : 'text-slate-800'}`}>
-                                            {menu.label}
+                                            {t(menu.label)}
                                         </span>
                                         <ChevronRight 
                                             size={20} 
@@ -263,7 +265,7 @@ const Header = () => {
                                                                 onClick={() => setMobileMenuOpen(false)}
                                                                 className="block py-2.5 px-2 text-[15px] font-medium text-slate-600 hover:text-[#00AEEF] hover:bg-slate-100 rounded transition-colors focus-ring"
                                                             >
-                                                                {child.label}
+                                                                {t(child.label)}
                                                             </Link>
                                                         </li>
                                                     ))}
@@ -283,10 +285,10 @@ const Header = () => {
                                     className="flex justify-center items-center py-3 bg-[#003366] text-white font-bold rounded-lg shadow-md active:scale-95 transition-transform"
                                     onClick={() => setMobileMenuOpen(false)}
                                 >
-                                    Inquiry
+                                    {t('header.inquiry')}
                                 </Link>
                                 <button className="flex justify-center items-center py-3 border border-slate-200 text-slate-700 font-bold rounded-lg bg-white active:scale-95 transition-transform">
-                                    <Search size={20} className="mr-2"/> Search
+                                    <Search size={20} className="mr-2"/> {t('header.search')}
                                 </button>
                              </div>
 

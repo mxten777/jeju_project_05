@@ -1,7 +1,7 @@
 // src/lib/lang.ts
 import i18n from '../i18n';
 
-export type Language = 'en' | 'ko';
+export type Language = 'en' | 'ko' | 'ja';
 
 export const setLanguage = async (lang: Language) => {
   try {
@@ -24,7 +24,9 @@ export const setLanguage = async (lang: Language) => {
 
 export const getLanguage = (): Language => {
   // Priority: i18n.resolvedLanguage > i18n.language > localStorage > navigator > 'en'
-  const current = i18n.resolvedLanguage || i18n.language || localStorage.getItem('lang');
-  if (current && current.startsWith('ko')) return 'ko';
+  const current = (i18n.resolvedLanguage || i18n.language || localStorage.getItem('lang'))?.toLowerCase();
+  
+  if (current?.includes('ko')) return 'ko';
+  if (current?.includes('ja')) return 'ja';
   return 'en';
 };

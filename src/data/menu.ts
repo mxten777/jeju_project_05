@@ -1,65 +1,65 @@
 export const MENU_STRUCTURE = [
   {
     id: 'company',
-    label: 'COMPANY',
+    label: 'menu.company.title',
     path: '/company',
     children: [
-      { label: '회사소개', path: '/company/about' },
-      { label: '비전·미션', path: '/company/vision' },
-      { label: '연혁', path: '/company/history' },
-      { label: '인증 및 수상', path: '/company/certifications' },
-      { label: '글로벌 네트워크', path: '/company/global' },
+      { label: 'menu.company.about', path: '/company/about' },
+      { label: 'menu.company.vision', path: '/company/vision' },
+      { label: 'menu.company.history', path: '/company/history' },
+      { label: 'menu.company.certifications', path: '/company/certifications' },
+      { label: 'menu.company.global', path: '/company/global' },
     ]
   },
   {
     id: 'products',
-    label: 'PRODUCTS',
+    label: 'menu.products.title',
     path: '/products',
     children: [
-      { label: '제품 카테고리', path: '/products/category' },
-      { label: '제품 검색', path: '/products/search' },
-      { label: '주요 제품군', path: '/products/featured' },
+      { label: 'menu.products.category', path: '/products/category' },
+      { label: 'menu.products.search', path: '/products/search' },
+      { label: 'menu.products.featured', path: '/products/featured' },
     ]
   },
   {
     id: 'technology',
-    label: 'TECHNOLOGY',
+    label: 'menu.technology.title',
     path: '/technology',
     children: [
-      { label: '핵심 기술', path: '/technology/core' },
-      { label: '연구개발', path: '/technology/rnd' },
-      { label: '적용 산업', path: '/technology/applications' },
+      { label: 'menu.technology.core', path: '/technology/core' },
+      { label: 'menu.technology.rnd', path: '/technology/rnd' },
+      { label: 'menu.technology.applications', path: '/technology/applications' },
     ]
   },
   {
     id: 'investors',
-    label: 'INVESTORS',
+    label: 'menu.investors.title',
     path: '/investors',
     children: [
-      { label: '투자정보', path: '/investors/info' },
-      { label: '공시자료', path: '/investors/disclosure' },
-      { label: '재무정보', path: '/investors/financial' },
-      { label: 'IR 자료', path: '/investors/ir-materials' },
+      { label: 'menu.investors.info', path: '/investors/info' },
+      { label: 'menu.investors.disclosure', path: '/investors/disclosure' },
+      { label: 'menu.investors.financial', path: '/investors/financial' },
+      { label: 'menu.investors.ir_materials', path: '/investors/ir-materials' },
     ]
   },
   {
     id: 'news',
-    label: 'NEWS',
+    label: 'menu.news.title',
     path: '/news',
     children: [
-      { label: '보도자료', path: '/news/press' },
-      { label: '공지사항', path: '/news/notice' },
-      { label: '주요 성과', path: '/news/achievements' },
+      { label: 'menu.news.press', path: '/news/press' },
+      { label: 'menu.news.notice', path: '/news/notice' },
+      { label: 'menu.news.achievements', path: '/news/achievements' },
     ]
   },
   {
     id: 'contact',
-    label: 'CONTACT',
+    label: 'menu.contact.title',
     path: '/contact',
     children: [
-      { label: '문의하기', path: '/contact/inquiry' },
-      { label: '오시는 길', path: '/contact/location' },
-      { label: '글로벌 문의', path: '/contact/global' },
+      { label: 'menu.contact.inquiry', path: '/contact/inquiry' },
+      { label: 'menu.contact.location', path: '/contact/location' },
+      { label: 'menu.contact.global', path: '/contact/global' },
     ]
   }
 ];

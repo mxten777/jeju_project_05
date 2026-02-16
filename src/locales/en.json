@@ -3,7 +3,52 @@
     "company": "Company",
     "products": "Products",
     "news": "News",
-    "contact": "Contact"
+    "contact": "Contact",
+    "mega_menu_desc": "We deliver world-class semiconductor solutions with precision and innovation.",
+    "view_overview": "VIEW OVERVIEW",
+    "inquiry": "Inquiry",
+    "search": "Search"
+  },
+  "menu": {
+    "company": {
+      "title": "COMPANY",
+      "about": "About Us",
+      "vision": "Vision & Mission",
+      "history": "History",
+      "certifications": "Certifications",
+      "global": "Global Network"
+    },
+    "products": {
+      "title": "PRODUCTS",
+      "category": "Product Categories",
+      "search": "Product Search",
+      "featured": "Featured Products"
+    },
+    "technology": {
+      "title": "TECHNOLOGY",
+      "core": "Core Technology",
+      "rnd": "R_&_D",
+      "applications": "Applications"
+    },
+    "investors": {
+      "title": "INVESTORS",
+      "info": "Investment Info",
+      "disclosure": "Disclosure",
+      "financial": "Financial Info",
+      "ir_materials": "IR Materials"
+    },
+    "news": {
+      "title": "NEWS",
+      "press": "Press Releases",
+      "notice": "Notices",
+      "achievements": "Key Achievements"
+    },
+    "contact": {
+      "title": "CONTACT",
+      "inquiry": "Inquiry",
+      "location": "Location",
+      "global": "Global Contact"
+    }
   },
   "home": {
     "hero": {
@@ -56,6 +101,21 @@
       "title": "Ready to innovate with us?",
       "desc": "Contact our engineering team to find the perfect memory solution for your specific application requirements.",
       "button": "Get in Touch"
+    }
+  },
+  "footer": {
+    "about": "Leading the future of ultra-low power memory solutions. We connect the world through advanced semiconductor technology.",
+    "contact": {
+      "jeju_hq": "Jeju Headquarters",
+      "jeju_addr": "Jeju Science Park, Jeju-do, Korea",
+      "phone": "Phone",
+      "email": "Email"
+    },
+    "legal": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Use",
+      "sitemap": "Sitemap",
+      "rights": "Jeju Semiconductor Corp. All rights reserved."
     }
   }
 }

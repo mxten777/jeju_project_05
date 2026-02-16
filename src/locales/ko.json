@@ -3,8 +3,69 @@
     "company": "회사소개",
     "products": "제품소개",
     "news": "뉴스",
-    "contact": "문의하기"
+    "contact": "문의하기",
+    "mega_menu_desc": "세계적인 수준의 반도체 솔루션과 혁신적인 기술을 제공합니다.",
+    "view_overview": "자세히 보기",
+    "inquiry": "문의하기",
+    "search": "검색"
   },
+  "menu": {
+    "company": {
+      "title": "회사소개",
+      "about": "회사소개",
+      "vision": "비전·미션",
+      "history": "연혁",
+      "certifications": "인증 및 수상",
+      "global": "글로벌 네트워크"
+    },
+    "products": {
+      "title": "제품소개",
+      "category": "제품 카테고리",
+      "search": "제품 검색",
+      "featured": "주요 제품군"
+    },
+    "technology": {
+      "title": "기술정보",
+      "core": "핵심 기술",
+      "rnd": "연구개발",
+      "applications": "적용 산업"
+    },
+    "investors": {
+      "title": "투자정보",
+      "info": "투자정보",
+      "disclosure": "공시자료",
+      "financial": "재무정보",
+      "ir_materials": "IR 자료"
+    },
+    "news": {
+      "title": "뉴스",
+      "press": "보도자료",
+      "notice": "공지사항",
+      "achievements": "주요 성과"
+    },
+    "contact": {
+      "title": "문의하기",
+      "inquiry": "문의하기",
+      "location": "오시는 길",
+      "global": "글로벌 문의"
+    }
+  },
+  "footer": {
+    "about": "초저전력 메모리 솔루션의 미래를 선도합니다. 당사는 첨단 반도체 기술을 통해 세상을 연결합니다.",
+    "contact": {
+      "jeju_hq": "제주 본사",
+      "jeju_addr": "제주특별자치도 제주시 첨단로 8길 11-10",
+      "phone": "전화",
+      "email": "이메일"
+    },
+    "legal": {
+      "privacy": "개인정보처리방침",
+      "terms": "이용약관",
+      "sitemap": "사이트맵",
+      "rights": "Jeju Semiconductor Corp. All rights reserved."
+    }
+  }
+}
   "home": {
     "hero": {
       "title": "반도체 혁신으로\n미래를 엽니다",

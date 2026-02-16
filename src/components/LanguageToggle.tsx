@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Globe } from 'lucide-react';
-import { setLanguage } from '../lib/lang';
+import { setLanguage, Language } from '../lib/lang';
 
 interface LanguageToggleProps {
   variant?: 'desktop' | 'mobile';
@@ -12,12 +12,22 @@ const LanguageToggle: React.FC<LanguageToggleProps> = ({ variant = 'desktop', cl
   const { i18n } = useTranslation();
   
   // Use resolvedLanguage for consistency, fallback to language
-  const currentLang = i18n.resolvedLanguage || i18n.language || 'en';
-  const isKo = currentLang.startsWith('ko');
+  const currentLang = (i18n.resolvedLanguage || i18n.language || 'en').toLowerCase();
   
   const handleToggle = () => {
-    const nextLang = isKo ? 'en' : 'ko';
+    // Cycle: EN -> KO -> JA -> EN
+    let nextLang: Language = 'en';
+    if (currentLang.includes('en')) nextLang = 'ko';
+    else if (currentLang.includes('ko')) nextLang = 'ja';
+    else if (currentLang.includes('ja')) nextLang = 'en';
+    
     setLanguage(nextLang);
+  };
+
+  const getLabel = () => {
+    if (currentLang.includes('ko')) return 'KR';
+    if (currentLang.includes('ja')) return 'JP';
+    return 'EN';
   };
 
   if (variant === 'mobile') {
@@ -29,7 +39,9 @@ const LanguageToggle: React.FC<LanguageToggleProps> = ({ variant = 'desktop', cl
       >
         <Globe size={20} /> 
         <span className="font-medium text-sm">
-          {isKo ? 'Switch to English (EN)' : '한국어 사이트 바로가기 (KR)'}
+          {currentLang.includes('en') ? '한국어/日本語 (KR/JP)' : 
+           currentLang.includes('ko') ? '日本語/English (JP/EN)' : 
+           'English/한국어 (EN/KR)'}
         </span>
       </button>
     );
@@ -41,9 +53,10 @@ const LanguageToggle: React.FC<LanguageToggleProps> = ({ variant = 'desktop', cl
       onClick={handleToggle}
       className={`flex items-center gap-2 text-xs font-bold transition-colors uppercase p-2 rounded hover:bg-black/5 focus-ring ${className}`}
       aria-label="Switch Language"
+      title="Click to switch language (EN -> KR -> JP)"
     >
       <Globe size={18} />
-      <span>{isKo ? 'EN' : 'KR'}</span>
+      <span>{getLabel()}</span>
     </button>
   );
 };

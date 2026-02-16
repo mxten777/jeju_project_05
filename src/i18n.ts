@@ -3,6 +3,7 @@ import { initReactI18next } from 'react-i18next';
 
 import en from './locales/en.json';
 import ko from './locales/ko.json';
+import ja from './locales/ja.json';
 
 // Utility to determine initial language
 const getInitialLanguage = (): string => {
@@ -14,8 +15,10 @@ const getInitialLanguage = (): string => {
 
   // 2. Check Browser Navigator
   const browserLang = navigator.language || (navigator.languages && navigator.languages[0]);
-  if (browserLang && (browserLang.toLowerCase().includes('ko') || browserLang.toLowerCase().includes('kr'))) {
-    return 'ko';
+  if (browserLang) {
+    const lang = browserLang.toLowerCase();
+    if (lang.includes('ko') || lang.includes('kr')) return 'ko';
+    if (lang.includes('ja') || lang.includes('jp')) return 'ja';
   }
 
   // 3. Default
@@ -30,12 +33,9 @@ i18n
   .use(initReactI18next)
   .init({
     resources: {
-      en: {
-        translation: en
-      },
-      ko: {
-        translation: ko
-      }
+      en: { translation: en },
+      ko: { translation: ko },
+      ja: { translation: ja }
     },
     lng: initialLang,
     fallbackLng: 'en',

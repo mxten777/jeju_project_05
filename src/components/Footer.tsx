@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
 import { Twitter, Linkedin, Facebook, MapPin, Phone, Mail } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { MENU_STRUCTURE } from '../data/menu';
 
 const Footer = () => {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -19,7 +21,7 @@ const Footer = () => {
               <div className="w-12 h-1 bg-primary-500 rounded-full"></div>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed mb-8 pr-6">
-              Leading the future of ultra-low power memory solutions. We connect the world through advanced semiconductor technology.
+              {t('footer.about')}
             </p>
             <div className="flex space-x-3">
               {[
@@ -47,7 +49,7 @@ const Footer = () => {
                 <div key={menu.id}>
                   <h3 className="text-sm font-bold text-white uppercase tracking-wider mb-6 pb-2 border-b border-slate-800">
                     <Link to={menu.path} className="hover:text-primary-400 transition-colors">
-                      {menu.label}
+                      {t(menu.label)}
                     </Link>
                   </h3>
                   <ul className="space-y-3">
@@ -57,7 +59,7 @@ const Footer = () => {
                           to={sub.path} 
                           className="text-slate-500 text-sm hover:text-primary-400 transition-colors block"
                         >
-                          {sub.label}
+                          {t(sub.label)}
                         </Link>
                       </li>
                     ))}
@@ -75,8 +77,8 @@ const Footer = () => {
               <MapPin size={24} />
             </div>
             <div>
-              <h4 className="font-bold text-white mb-1">Jeju Headquarters</h4>
-              <p className="text-slate-400 text-sm">Jeju Science Park, Jeju-do, Korea</p>
+              <h4 className="font-bold text-white mb-1">{t('footer.contact.jeju_hq')}</h4>
+              <p className="text-slate-400 text-sm">{t('footer.contact.jeju_addr')}</p>
             </div>
           </div>
           <div className="flex items-center gap-4">
@@ -84,7 +86,7 @@ const Footer = () => {
               <Phone size={24} />
             </div>
             <div>
-              <h4 className="font-bold text-white mb-1">Phone</h4>
+              <h4 className="font-bold text-white mb-1">{t('footer.contact.phone')}</h4>
               <p className="text-slate-400 text-sm">+82-64-740-1700</p>
             </div>
           </div>
@@ -93,7 +95,7 @@ const Footer = () => {
               <Mail size={24} />
             </div>
             <div>
-               <h4 className="font-bold text-white mb-1">Email</h4>
+               <h4 className="font-bold text-white mb-1">{t('footer.contact.email')}</h4>
                <p className="text-slate-400 text-sm">sales@jeju-semi.com</p>
             </div>
           </div>
@@ -101,11 +103,11 @@ const Footer = () => {
 
         {/* Bottom Bar: Copyright & Legal */}
         <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
-          <p>&copy; {currentYear} Jeju Semiconductor Corp. All rights reserved.</p>
+          <p>&copy; {currentYear} {t('footer.legal.rights')}</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link to="/terms" className="hover:text-white transition-colors">Terms of Use</Link>
-            <Link to="/sitemap" className="hover:text-white transition-colors">Sitemap</Link>
+            <Link to="/privacy" className="hover:text-white transition-colors">{t('footer.legal.privacy')}</Link>
+            <Link to="/terms" className="hover:text-white transition-colors">{t('footer.legal.terms')}</Link>
+            <Link to="/sitemap" className="hover:text-white transition-colors">{t('footer.legal.sitemap')}</Link>
           </div>
         </div>
       </div>
