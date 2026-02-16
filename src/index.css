@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@layer theme {
+  :root {
+    --color-primary: #0f172a; /* Deep Navy (Slate 900) */
+    --color-primary-light: #1e293b; /* Lighter Navy (Slate 800) */
+    --color-accent: #0ea5e9; /* Electric Blue (Sky 500) */
+    --color-accent-dark: #0284c7; /* Darker Blue (Sky 600) */
+    --color-secondary: #64748b; /* Slate 500 */
+    --font-heading: system-ui, -apple-system, sans-serif;
+    --font-body: system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer base {
+  body {
+    @apply font-sans antialiased text-slate-800 bg-slate-50 selection:bg-sky-200 selection:text-slate-900;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight text-slate-900;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-6 max-w-7xl;
+  }
+  
+  .section-padding {
+    @apply py-24 md:py-32;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-4 bg-sky-500 hover:bg-sky-600 text-white font-medium transition-all duration-300 shadow-lg shadow-sky-500/20 hover:shadow-sky-500/40;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-8 py-4 bg-transparent border border-white/30 hover:bg-white/10 text-white font-medium transition-all duration-300 backdrop-blur-sm;
+  }
+
+  .btn-outline-dark {
+    @apply inline-flex items-center justify-center px-8 py-4 bg-transparent border border-slate-300 hover:border-sky-500 hover:text-sky-600 text-slate-700 font-medium transition-all duration-300;
+  }
+  
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-md border border-white/10 shadow-xl;
+  }
+
+  .premium-card {
+    @apply bg-white p-10 border border-slate-100 hover:border-sky-500/30 hover:shadow-2xl transition-all duration-500 relative overflow-hidden;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-linear-to-r from-sky-500 to-blue-600;
+  }
+}

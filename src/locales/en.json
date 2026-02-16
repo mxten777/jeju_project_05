@@ -1,0 +1,61 @@
+{
+  "header": {
+    "company": "Company",
+    "products": "Products",
+    "news": "News",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "title": "Powering the Future\nwith Semiconductor Innovation",
+      "subtitle": "Jeju Semiconductor delivers world-class memory solutions for automotive, IoT, and mobile applications.",
+      "cta_products": "Explore Products",
+      "cta_contact": "Contact Sales"
+    },
+    "features": {
+      "title": "Why Choose Jeju Semiconductor",
+      "desc": "We provide cutting-edge semiconductor solutions optimized for performance, efficiency, and reliability.",
+      "high_performance": {
+        "title": "High Performance",
+        "desc": "Advanced architecture delivering superior speed and processing power for demanding applications."
+      },
+      "energy_efficient": {
+        "title": "Energy Efficient",
+        "desc": "Optimized power consumption designs extending battery life for mobile and IoT devices."
+      },
+      "reliability": {
+        "title": "Reliability",
+        "desc": "Automotive-grade quality ensuring stable operation in extreme environments."
+      }
+    },
+    "products": {
+      "title": "Our Solutions",
+      "subtitle": "Comprehensive memory portfolio tailored for various industries.",
+      "view_all": "View All Products",
+      "memory": {
+        "category": "Memory",
+        "desc": "Low power double data rate memory designed for mobile devices, offering high speed and low power consumption."
+      },
+      "automotive": {
+        "category": "Automotive",
+        "desc": "High-reliability memory solutions meeting AEC-Q100 standards for infotainment and ADAS systems."
+      },
+      "iot": {
+        "category": "IoT",
+        "desc": "Compact memory solutions combining NAND Flash and DRAM in a single package for space-constrained IoT devices."
+      },
+      "learn_more": "Learn more"
+    },
+    "stats": {
+      "years": "Years of Innovation",
+      "partners": "Global Partners",
+      "shipped": "Units Shipped",
+      "quality": "Certified Quality"
+    },
+    "cta_bottom": {
+      "title": "Ready to innovate with us?",
+      "desc": "Contact our engineering team to find the perfect memory solution for your specific application requirements.",
+      "button": "Get in Touch"
+    }
+  }
+}

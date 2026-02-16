@@ -1,0 +1,61 @@
+{
+  "header": {
+    "company": "회사소개",
+    "products": "제품소개",
+    "news": "뉴스",
+    "contact": "문의하기"
+  },
+  "home": {
+    "hero": {
+      "title": "반도체 혁신으로\n미래를 엽니다",
+      "subtitle": "제주반도체는 자동차, 사물인터넷(IoT), 모바일 기기를 위한\n세계 최고 수준의 메모리 솔루션을 제공합니다.",
+      "cta_products": "제품 살펴보기",
+      "cta_contact": "영업 문의"
+    },
+    "features": {
+      "title": "왜 제주반도체인가",
+      "desc": "성능, 효율성, 신뢰성이 최적화된 첨단 반도체 솔루션을 제공합니다.",
+      "high_performance": {
+        "title": "고성능",
+        "desc": "고성능 애플리케이션을 위한 탁월한 속도와 처리 능력을 제공합니다."
+      },
+      "energy_efficient": {
+        "title": "에너지 효율",
+        "desc": "모바일 및 IoT 기기의 배터리 수명을 연장하는 최적화된 저전력 설계."
+      },
+      "reliability": {
+        "title": "신뢰성",
+        "desc": "극한 환경에서도 안정적인 동작을 보장하는 전장급(Automotive-grade) 품질."
+      }
+    },
+    "products": {
+      "title": "주요 솔루션",
+      "subtitle": "다양한 산업 분야에 맞춤화된 포괄적인 메모리 포트폴리오",
+      "view_all": "전체 제품 보기",
+      "memory": {
+        "category": "메모리",
+        "desc": "모바일 기기를 위한 고속 저전력 LPDDR 메모리 솔루션"
+      },
+      "automotive": {
+        "category": "전장용",
+        "desc": "인포테인먼트 및 ADAS 시스템을 위한 AEC-Q100 인증 메모리"
+      },
+      "iot": {
+        "category": "사물인터넷",
+        "desc": "협소한 공간의 IoT 기기를 위한 NAND Flash 및 DRAM 복합 패키지"
+      },
+      "learn_more": "자세히 보기"
+    },
+    "stats": {
+      "years": "년의 혁신",
+      "partners": "글로벌 파트너",
+      "shipped": "누적 출하량",
+      "quality": "인증된 품질"
+    },
+    "cta_bottom": {
+      "title": "함께 혁신할 준비가 되셨나요?",
+      "desc": "귀사의 애플리케이션 요구사항에 맞는 완벽한 메모리 솔루션을 찾아보세요.",
+      "button": "문의하기"
+    }
+  }
+}
