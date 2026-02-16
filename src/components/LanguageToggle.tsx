@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Globe } from 'lucide-react';
-import { setLanguage, Language } from '../lib/lang';
+import { setLanguage, type Language } from '../lib/lang';
 
 interface LanguageToggleProps {
   variant?: 'desktop' | 'mobile';
