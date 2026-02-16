@@ -1,18 +1,33 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
 
 import en from './locales/en.json';
-import ko from './locales/ko.json'; // Ensure this path is correct relative to src/i18n.ts
+import ko from './locales/ko.json';
+
+// Utility to determine initial language
+const getInitialLanguage = (): string => {
+  // 1. Check localStorage
+  const savedLang = localStorage.getItem('lang');
+  if (savedLang) {
+    return savedLang;
+  }
+
+  // 2. Check Browser Navigator
+  const browserLang = navigator.language || (navigator.languages && navigator.languages[0]);
+  if (browserLang && (browserLang.toLowerCase().includes('ko') || browserLang.toLowerCase().includes('kr'))) {
+    return 'ko';
+  }
+
+  // 3. Default
+  return 'en';
+};
+
+const initialLang = getInitialLanguage();
+// Set HTML lang attribute immediately for consistency
+document.documentElement.lang = initialLang;
 
 i18n
-  // detect user language
-  // learn more: https://github.com/i18next/i18next-browser-languageDetector
-  .use(LanguageDetector)
-  // pass the i18n instance to react-i18next.
   .use(initReactI18next)
-  // init i18next
-  // for all options read: https://www.i18next.com/overview/configuration-options
   .init({
     resources: {
       en: {
@@ -22,8 +37,9 @@ i18n
         translation: ko
       }
     },
+    lng: initialLang,
     fallbackLng: 'en',
-    debug: true, // Enable debug to see if translations are loading
+    debug: import.meta.env.MODE === 'development',
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
     }

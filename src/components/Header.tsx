@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Globe, ChevronRight, Search, ArrowRight } from 'lucide-react';
+import { Menu, X, ChevronRight, Search, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
 import { MENU_STRUCTURE } from '../data/menu';
+import LanguageToggle from './LanguageToggle';
 
 const Header = () => {
     // State management
@@ -11,7 +11,6 @@ const Header = () => {
     const [hoveredMenu, setHoveredMenu] = useState<string | null>(null);
     const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
     const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
-    const { i18n } = useTranslation();
     
     // Scroll detection
     useEffect(() => {
@@ -36,31 +35,6 @@ const Header = () => {
         document.addEventListener('keydown', handleKeyDown);
         return () => document.removeEventListener('keydown', handleKeyDown);
     }, []);
-
-    // Toggle language
-    const toggleLanguage = async () => {
-        console.log('Language toggle clicked. Current:', i18n.language);
-        
-        const currentLang = i18n.language || 'kr';
-        const targetLang = currentLang.startsWith('en') ? 'ko' : 'en';
-        
-        console.log('Switching to:', targetLang);
-        try {
-            await i18n.changeLanguage(targetLang);
-            localStorage.setItem('lang', targetLang);
-            console.log('Language switched successfully. New:', i18n.language);
-        } catch (error) {
-            console.error('Failed to switch language:', error);
-        }
-    };
-    
-    // Initialize language from localStorage on mount
-    useEffect(() => {
-        const savedLang = localStorage.getItem('lang');
-        if (savedLang && savedLang !== i18n.language) {
-             i18n.changeLanguage(savedLang);
-        }
-    }, [i18n]);
 
     // Toggle mobile menu expansion
     const toggleMobileExpand = (id: string) => {
@@ -170,14 +144,7 @@ const Header = () => {
                         <Search size={20} />
                     </button>
                     
-                    <button 
-                        onClick={toggleLanguage}
-                        className={`flex items-center gap-2 text-xs font-bold transition-colors uppercase p-2 rounded hover:bg-black/5 focus-ring ${textBase}`}
-                        aria-label="Switch Language"
-                    >
-                        <Globe size={18} />
-                        <span>{i18n.language.startsWith('en') ? 'KR' : 'EN'}</span>
-                    </button>
+                    <LanguageToggle variant="desktop" className={textBase} />
 
                     <Link 
                         to="/contact" 
@@ -323,13 +290,7 @@ const Header = () => {
                                 </button>
                              </div>
 
-                             <button 
-                                onClick={toggleLanguage} 
-                                className="flex items-center space-x-2 text-slate-500 hover:text-[#003366] p-2"
-                             >
-                                <Globe size={20} /> 
-                                <span className="font-medium text-sm">{i18n.language.startsWith('en') ? '한국어 사이트 바로가기 (KR)' : 'Switch to English (EN)'}</span>
-                            </button>
+                             <LanguageToggle variant="mobile" />
                         </div>
                     </motion.div>
                 )}
