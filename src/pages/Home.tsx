@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, Cpu, Zap, ShieldCheck, TrendingUp, Globe, Users, Award, Smartphone, Server, Car } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import PageMeta from '../components/PageMeta';
 
 const Home = () => {
     const { t } = useTranslation();
@@ -24,6 +25,7 @@ const Home = () => {
 
     return (
         <>
+            <PageMeta title={t('home.meta.title') || "Welcome"} description={t('home.meta.desc') || "Jeju Semiconductor - Leading Memory Solutions Provider"} />
             {/* 1. Hero Section (Premium Parallax) */}
             <section className="relative h-screen flex items-center overflow-hidden bg-slate-900">
                 <motion.div style={{ y: y1 }} className="absolute inset-0 z-0">

@@ -25,6 +25,18 @@ const Header = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    // Keyboard support for accessibility
+    useEffect(() => {
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.key === 'Escape') {
+                setHoveredMenu(null);
+                setMobileMenuOpen(false);
+            }
+        };
+        document.addEventListener('keydown', handleKeyDown);
+        return () => document.removeEventListener('keydown', handleKeyDown);
+    }, []);
+
     // Toggle language
     const toggleLanguage = () => {
         const currentLang = i18n.language;
@@ -111,6 +123,12 @@ const Header = () => {
                                 key={menu.id} 
                                 className="h-full flex items-center"
                                 onMouseEnter={() => setHoveredMenu(menu.id)}
+                                onFocus={() => setHoveredMenu(menu.id)} // Initial focus support
+                                onKeyDown={(e) => {
+                                    if(e.key === 'Enter' || e.key === ' ') {
+                                        setHoveredMenu(hoveredMenu === menu.id ? null : menu.id);
+                                    }
+                                }}
                             >
                                 <Link 
                                     to={menu.path}
