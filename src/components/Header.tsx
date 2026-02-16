@@ -27,7 +27,9 @@ const Header = () => {
 
     // Toggle language
     const toggleLanguage = () => {
-        i18n.changeLanguage(i18n.language === 'en' ? 'ko' : 'en');
+        const currentLang = i18n.language;
+        const targetLang = currentLang.startsWith('en') ? 'ko' : 'en';
+        i18n.changeLanguage(targetLang);
     };
 
     // Toggle mobile menu expansion
@@ -138,7 +140,7 @@ const Header = () => {
                         aria-label="Switch Language"
                     >
                         <Globe size={18} />
-                        <span>{i18n.language === 'en' ? 'KR' : 'EN'}</span>
+                        <span>{i18n.language.startsWith('en') ? 'KR' : 'EN'}</span>
                     </button>
 
                     <Link 
@@ -169,24 +171,24 @@ const Header = () => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.25, ease: "easeOut" }}
-                        className="absolute top-full left-0 w-full bg-[#003366] text-white border-none shadow-2xl overflow-hidden hidden lg:block"
+                        className="absolute top-full left-0 w-full bg-white border-t-2 border-[#003366] shadow-xl overflow-hidden hidden lg:block"
                         onMouseEnter={() => setHoveredMenu(hoveredMenu)}
                         onMouseLeave={() => setHoveredMenu(null)}
                     >
                         <div className="container-custom py-12">
                             <div className="grid grid-cols-4 gap-12">
                                 {/* Left: Featured Info */}
-                                <div className="col-span-1 border-r border-white/10 pr-8 flex flex-col justify-between">
+                                <div className="col-span-1 border-r border-slate-100 pr-8 flex flex-col justify-between">
                                     <div>
-                                        <h3 className="text-3xl font-bold text-white mb-4">
+                                        <h3 className="text-3xl font-bold text-[#003366] mb-4">
                                             {MENU_STRUCTURE.find(m => m.id === hoveredMenu)?.label}
                                         </h3>
-                                        <p className="text-slate-300/80 text-sm leading-relaxed">
+                                        <p className="text-slate-500 text-sm leading-relaxed">
                                             We deliver world-class semiconductor solutions with precision and innovation.
                                         </p>
                                     </div>
                                     <Link to={MENU_STRUCTURE.find(m => m.id === hoveredMenu)?.path || "#"} 
-                                          className="mt-8 text-[#00AEEF] font-bold text-sm tracking-widest flex items-center gap-2 cursor-pointer group hover:text-white w-fit focus-ring">
+                                          className="mt-8 text-[#00AEEF] font-bold text-sm tracking-widest flex items-center gap-2 cursor-pointer group hover:text-[#008ec2] w-fit focus-ring">
                                         VIEW OVERVIEW <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                                     </Link>
                                 </div>
@@ -198,11 +200,11 @@ const Header = () => {
                                             <li key={child.path}>
                                                 <Link 
                                                     to={child.path}
-                                                    className="group flex items-center justify-between p-4 rounded-xl hover:bg-white/5 border border-transparent hover:border-white/10 transition-all duration-200 focus-ring"
+                                                    className="group flex items-center justify-between p-4 rounded-xl hover:bg-slate-50 border border-transparent hover:border-slate-100 transition-all duration-200 focus-ring"
                                                     onClick={() => setHoveredMenu(null)}
                                                 >
-                                                    <span className="text-slate-100 font-semibold group-hover:text-[#00AEEF] transition-colors text-[15px]">{child.label}</span>
-                                                    <ChevronRight size={18} className="text-slate-500 group-hover:text-[#00AEEF] opacity-0 group-hover:opacity-100 transition-all -translate-x-1 group-hover:translate-x-0" />
+                                                    <span className="text-[#334155] font-semibold group-hover:text-[#00AEEF] transition-colors text-[15px]">{child.label}</span>
+                                                    <ChevronRight size={18} className="text-slate-300 group-hover:text-[#00AEEF] opacity-0 group-hover:opacity-100 transition-all -translate-x-1 group-hover:translate-x-0" />
                                                 </Link>
                                             </li>
                                         ))}
@@ -290,7 +292,7 @@ const Header = () => {
                                 className="flex items-center space-x-2 text-slate-500 hover:text-[#003366] p-2"
                              >
                                 <Globe size={20} /> 
-                                <span className="font-medium text-sm">{i18n.language === 'en' ? '한국어 사이트 바로가기 (KR)' : 'Switch to English (EN)'}</span>
+                                <span className="font-medium text-sm">{i18n.language.startsWith('en') ? '한국어 사이트 바로가기 (KR)' : 'Switch to English (EN)'}</span>
                             </button>
                         </div>
                     </motion.div>
