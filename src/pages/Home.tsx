@@ -127,7 +127,7 @@ const Home = () => {
                             <div key={idx} className={`group relative h-96 p-10 flex flex-col justify-between overflow-hidden shadow-2xl transition-all hover:-translate-y-2 ${tech.bg}`}>
                                 <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-20 transition-opacity"></div>
                                 <div className="relative z-10 w-16 h-16 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white mb-6">
-                                    {React.cloneElement(tech.icon as React.ReactElement, { size: 32 })}
+                                    {React.cloneElement(tech.icon as React.ReactElement<{size: number}>, { size: 32 })}
                                 </div>
                                 <div className="relative z-10 mt-auto">
                                     <h4 className="text-2xl font-bold text-white mb-4">{tech.title}</h4>
@@ -163,7 +163,7 @@ const Home = () => {
                                 <div className="bg-white p-12 hover:bg-slate-50 transition-colors h-full flex flex-col items-center md:items-start text-center md:text-left">
                                     <div className="text-xs font-bold tracking-widest text-secondary-500 uppercase mb-3">{prod.cat}</div>
                                     <h3 className="text-2xl font-bold text-slate-800 mb-2 group-hover:text-primary-600 transition-colors">{prod.name}</h3>
-                                    <p className="text-slate-500 text-sm mb-6 flex-grow">{prod.feature}</p>
+                                    <p className="text-slate-500 text-sm mb-6 grow">{prod.feature}</p>
                                     <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-400 group-hover:bg-primary-600 group-hover:text-white transition-all ml-auto md:ml-0 mt-auto">
                                         <ArrowRight size={18} />
                                     </div>

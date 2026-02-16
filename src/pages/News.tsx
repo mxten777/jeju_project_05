@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Calendar, ArrowRight, ChevronRight } from 'lucide-react';
 import SubPageLayout from '../components/layout/SubPageLayout';

@@ -1,4 +1,3 @@
-import React from 'react';
 import SubPageLayout from '../../components/layout/SubPageLayout';
 import { MapPin, Phone, Mail } from 'lucide-react';
 

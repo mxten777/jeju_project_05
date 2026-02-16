@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { 
@@ -6,8 +6,6 @@ import {
   Filter, 
   ArrowRight, 
   Cpu, 
-  Layers, 
-  Zap, 
   Database,
   Smartphone,
   Car
@@ -30,7 +28,7 @@ const Products = () => {
                             product.description.toLowerCase().includes(searchQuery.toLowerCase());
       return matchesCategory && matchesSearch;
     });
-  }, [selectedCategory, searchQuery]);
+  }, [selectedCategory, searchQuery, products]);
 
   // Icon helper for categories (optional visual polish)
   const getCategoryIcon = (cat: string) => {

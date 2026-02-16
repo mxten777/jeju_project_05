@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { db } from '../firebase';
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { motion } from 'framer-motion';
 import { Send, MapPin, Phone, Mail, Loader2, CheckCircle2, ChevronRight, ArrowRight } from 'lucide-react';
 import SubPageLayout from '../components/layout/SubPageLayout';

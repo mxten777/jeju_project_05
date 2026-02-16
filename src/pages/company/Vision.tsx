@@ -1,6 +1,6 @@
 import React from 'react';
 import SubPageLayout from '../../components/layout/SubPageLayout';
-import { Target, Users, Zap, ShieldCheck } from 'lucide-react';
+import { Target, Users, ShieldCheck } from 'lucide-react';
 
 const Vision = () => {
   return (
@@ -27,7 +27,7 @@ const Vision = () => {
                </div>
             </div>
             
-            <div className="relative h-full min-h-[400px]">
+            <div className="relative h-full min-h-100">
                <div className="absolute inset-0 bg-primary-100 rounded-2xl opacity-20 transform rotate-3"></div>
                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center rounded-2xl shadow-xl"></div>
             </div>
@@ -46,7 +46,7 @@ const Vision = () => {
                ].map((val, idx) => (
                  <div key={idx} className="group">
                     <div className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6 text-primary-400 group-hover:bg-primary-600 group-hover:text-white transition-all transform group-hover:scale-110">
-                       {React.cloneElement(val.icon as React.ReactElement, { size: 36 })}
+                       {React.cloneElement(val.icon as React.ReactElement<{size: number}>, { size: 36 })}
                     </div>
                     <h3 className="text-xl font-bold mb-3">{val.title}</h3>
                     <p className="text-slate-400 text-sm">{val.desc}</p>

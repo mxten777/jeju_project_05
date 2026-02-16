@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { Twitter, Linkedin, Facebook, MapPin, Phone, Mail } from 'lucide-react';
 import { MENU_STRUCTURE } from '../data/menu';

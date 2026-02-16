@@ -1,6 +1,5 @@
-import React from 'react';
 import SubPageLayout from '../../components/layout/SubPageLayout';
-import { BarChart, ArrowUpRight, ArrowDownRight } from 'lucide-react';
+import { BarChart, ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Financial = () => {

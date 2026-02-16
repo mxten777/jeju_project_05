@@ -1,7 +1,6 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Building2, Award, Globe, Users, Target, ArrowRight } from 'lucide-react';
+import { Award, Globe, Target, ArrowRight } from 'lucide-react';
 import SubPageLayout from '../../components/layout/SubPageLayout';
 
 const About = () => {
@@ -47,7 +46,7 @@ const About = () => {
           <div className="rounded-2xl overflow-hidden shadow-2xl relative z-10">
             <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2032&auto=format&fit=crop" alt="Jeju Semiconductor HQ" className="w-full h-full object-cover" />
           </div>
-          <div className="absolute top-10 -right-10 w-full h-full border-2 border-primary-100 rounded-2xl -z-0 hidden md:block"></div>
+          <div className="absolute top-10 -right-10 w-full h-full border-2 border-primary-100 rounded-2xl z-0 hidden md:block"></div>
         </div>
       </section>
 
@@ -68,7 +67,7 @@ const About = () => {
            ].map((item, idx) => (
              <div key={idx} className="bg-white p-8 rounded-xl shadow-lg border border-slate-100 hover:-translate-y-2 transition-transform duration-300">
                 <div className="w-16 h-16 bg-primary-50 rounded-full flex items-center justify-center text-primary-600 mb-6">
-                   {React.cloneElement(item.icon as React.ReactElement, { size: 32 })}
+                   {React.cloneElement(item.icon as React.ReactElement<{size: number}>, { size: 32 })}
                 </div>
                 <h3 className="text-xl font-bold text-slate-800 mb-3">{item.title}</h3>
                 <p className="text-slate-500 leading-relaxed mb-6">

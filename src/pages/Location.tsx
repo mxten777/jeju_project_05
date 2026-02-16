@@ -1,6 +1,5 @@
-import React from 'react';
 import SubPageLayout from '../components/layout/SubPageLayout';
-import { MapPin, Phone, Mail, Globe, Clock, Building, ArrowRight } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Building, ArrowRight } from 'lucide-react';
 
 const Location = () => {
    const locations = [

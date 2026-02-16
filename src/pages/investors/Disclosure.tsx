@@ -1,6 +1,5 @@
-import React from 'react';
 import SubPageLayout from '../../components/layout/SubPageLayout';
-import { Download, FileText, Calendar } from 'lucide-react';
+import { Download, Calendar } from 'lucide-react';
 
 const disclosures = [
   { id: 1, date: "2024-03-15", title: "[Notice] Notice of the 24th Annual General Meeting of Shareholders", type: "Notice" },
