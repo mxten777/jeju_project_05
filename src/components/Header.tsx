@@ -59,7 +59,7 @@ const Header = () => {
 
     // Background Class
     const bgClass = isLightState
-        ? 'bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm'
+        ? 'bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-md'
         : 'bg-transparent border-b border-white/10';
 
     // Text & Interaction Colors
@@ -165,11 +165,11 @@ const Header = () => {
             <AnimatePresence>
                 {hoveredMenu && (
                     <motion.div
-                        initial={{ opacity: 0, y: -5 }}
+                        initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -5 }}
-                        transition={{ duration: 0.2, ease: "easeOut" }}
-                        className="absolute top-full left-0 w-full bg-white border-t border-slate-100 border-b shadow-xl overflow-hidden hidden lg:block"
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{ duration: 0.25, ease: "easeOut" }}
+                        className="absolute top-full left-0 w-full bg-slate-50/95 backdrop-blur-md border-t border-slate-200 border-b shadow-2xl overflow-hidden hidden lg:block"
                         onMouseEnter={() => setHoveredMenu(hoveredMenu)}
                         onMouseLeave={() => setHoveredMenu(null)}
                     >
