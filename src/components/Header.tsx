@@ -38,11 +38,29 @@ const Header = () => {
     }, []);
 
     // Toggle language
-    const toggleLanguage = () => {
-        const currentLang = i18n.language;
+    const toggleLanguage = async () => {
+        console.log('Language toggle clicked. Current:', i18n.language);
+        
+        const currentLang = i18n.language || 'kr';
         const targetLang = currentLang.startsWith('en') ? 'ko' : 'en';
-        i18n.changeLanguage(targetLang);
+        
+        console.log('Switching to:', targetLang);
+        try {
+            await i18n.changeLanguage(targetLang);
+            localStorage.setItem('lang', targetLang);
+            console.log('Language switched successfully. New:', i18n.language);
+        } catch (error) {
+            console.error('Failed to switch language:', error);
+        }
     };
+    
+    // Initialize language from localStorage on mount
+    useEffect(() => {
+        const savedLang = localStorage.getItem('lang');
+        if (savedLang && savedLang !== i18n.language) {
+             i18n.changeLanguage(savedLang);
+        }
+    }, [i18n]);
 
     // Toggle mobile menu expansion
     const toggleMobileExpand = (id: string) => {
@@ -102,7 +120,7 @@ const Header = () => {
                 <div className="absolute inset-0 bg-linear-to-b from-black/50 via-black/20 to-transparent pointer-events-none -z-10 h-32 transition-opacity duration-500" />
             )}
 
-            <div className="container-custom h-20 flex items-center justify-between relative">
+            <div className="container-custom h-20 flex items-center justify-between relative z-50">
                 
                 {/* 1. LOGO AREA */}
                 <Link to="/" className="flex items-center space-x-3 z-50 relative group focus-ring p-1" aria-label="Jeju Semiconductor Home">
